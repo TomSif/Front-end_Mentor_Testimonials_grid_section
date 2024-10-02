@@ -1,0 +1,265 @@
+:root {
+  /* ### Define colors of the project */
+  /*  Primary */
+  --Moderate-violet: hsl(263, 55%, 52%);
+  --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --White: hsl(0, 0%, 100%);
+  --White50: rgba(255, 255, 255, 0.5);
+  /* Neutral */
+  --Light-gray: hsl(0, 0%, 81%);
+  --Light-grayish-blue: hsl(210, 46%, 95%);
+
+  /* ### Define gap and padding of the project */
+  --layout-Gap: 2rem;
+  --layout-Padding: 1.5rem;
+}
+
+/* ### Define Fonts */
+/* barlow-semi-condensed-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Barlow Semi Condensed";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/barlow-semi-condensed-v15-latin-regular.woff2")
+    format("woff2");
+}
+/* barlow-semi-condensed-500 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Barlow Semi Condensed";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./assets/barlow-semi-condensed-v15-latin-500.woff2") format("woff2");
+}
+/* barlow-semi-condensed-600 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Barlow Semi Condensed";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./assets/barlow-semi-condensed-v15-latin-600.woff2") format("woff2");
+}
+
+/* ###  Start styling  */
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--Light-grayish-blue);
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  padding: 4.5rem var(--layout-Padding);
+  gap: var(--layout-Padding);
+}
+
+/*  ### Global styling for all the articles  */
+.testimonial {
+  padding: var(--layout-Padding) var(--layout-Gap);
+  border-radius: 0.5rem;
+  /* box-shadow: 1rem 0.5rem 2.5rem hsl(195, 12%, 84%); */
+  box-shadow: 2rem 1rem 3rem 2px hsl(0deg 0% 43.94% / 11%);
+  position: relative;
+  z-index: 1;
+}
+/* Styling header image and text  */
+.testimonial__info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.testimonial__image {
+  width: 2rem;
+  border-radius: 50%;
+  border: 1px solid var(--White50);
+  display: inline-flex;
+}
+
+.testimonial__text {
+  display: flex;
+  flex-direction: column;
+  color: var(--White);
+}
+
+.testimonial__name {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.testimonial__role {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 0.7rem;
+  color: var(--White);
+  opacity: 50%;
+}
+
+.testimonial__quote {
+  padding-top: 1rem;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 1.27rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.3;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial__fulltext {
+  padding-top: 1rem;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 0.81rem;
+  line-height: 1.6;
+  color: var(--White50);
+  letter-spacing: 0.03em;
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  opacity: 70%;
+}
+
+/* ###  Styling specific for each article  */
+
+.testimonial--Daniel {
+  background-color: var(--Moderate-violet);
+  color: var(--White);
+  position: relative;
+}
+.testimonial--Daniel::before {
+  content: "";
+  background-image: url(./images/bg-pattern-quotation.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 7rem;
+  height: 6.7rem;
+  top: 0;
+  right: 1.5rem;
+  opacity: 70%;
+  z-index: 1;
+}
+.testimonial--Jonathan {
+  color: var(--White);
+  background-color: var(--Very-dark-grayish-blue);
+}
+.testimonial--Jeanette {
+  color: var(--Very-dark-grayish-blue);
+  background-color: var(--White);
+}
+.testimonial--Patrick {
+  color: var(--White);
+  background-color: var(--Very-dark-blackish-blue);
+}
+.testimonial--Patrick .testimonial__image {
+  border-color: var(--Moderate-violet);
+}
+
+.testimonial--Kira {
+  color: var(--Very-dark-grayish-blue);
+  background-color: var(--White);
+}
+/* change the color of the font for cards with white backgrounds  */
+.white-background {
+  color: var(--Very-dark-grayish-blue) !important;
+}
+
+.testimonial--Jeanette .testimonial__role,
+.testimonial--Jeanette .testimonial__fulltext,
+.testimonial--Kira .testimonial__role,
+.testimonial--Kira .testimonial__fulltext {
+  opacity: 70%;
+}
+
+/* ###  Footer is hidden for design purpose  */
+footer {
+  display: none;
+}
+
+/* ### MEDIAS QUERIES */
+/* Adjusting to tablet version */
+@media (min-width: 47rem) {
+  .main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .testimonials {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: var(--layout-Padding);
+    width: 100%;
+    max-width: 75rem;
+    margin: auto auto;
+  }
+  .testimonial--Daniel {
+    grid-column: 1 / 2;
+    grid-row: 1;
+  }
+  .testimonial--Daniel::before {
+    right: 2.5rem;
+  }
+  .testimonial--Jonathan {
+    grid-column: 2 / 3;
+    grid-row: 1;
+  }
+  .testimonial--Kira {
+    grid-column: 1 / 2;
+    grid-row: 2;
+  }
+  .testimonial--Jeanette {
+    grid-column: 2 / 3;
+    grid-row: 2;
+  }
+  .testimonial--Patrick {
+    grid-column: 1 / 3;
+    grid-row: 3;
+  }
+}
+
+/* Adjusting to desktop version */
+@media (min-width: 70rem) {
+  .main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .testimonials {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: var(--layout-Padding);
+  }
+  .testimonial--Daniel {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+  .testimonial--Daniel::before {
+    right: 4rem;
+  }
+  .testimonial--Jonathan {
+    grid-column: 3 / 4;
+    grid-row: 1;
+  }
+  .testimonial--Kira {
+    grid-column: 4 / 4;
+    grid-row: 1 / 3;
+  }
+  .testimonial--Jeanette {
+    grid-column: 1 / 2;
+    grid-row: 2;
+  }
+  .testimonial--Patrick {
+    grid-column: 2 / 4;
+    grid-row: 2;
+  }
+}
